@@ -1,19 +1,11 @@
-import { FaShoppingCart } from "react-icons/fa";
+import { Link } from 'react-router-dom'
 
-export const CartWidget = () => {
+const CartWidget = () => {
   return (
-    <div style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
-      <FaShoppingCart />
-      <span style={{
-        marginLeft: "5px",
-        backgroundColor: "red",
-        color: "white",
-        borderRadius: "50%",
-        padding: "2px 6px",
-        fontSize: "12px"
-      }}>
-        0
-      </span>
-    </div>
-  );
-};
+    <Link to="/checkout" style={{ fontSize: '24px', textDecoration: 'none' }}>
+      🛒
+    </Link>
+  )
+}
+
+export default CartWidget

@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+import Header from './components/Header'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Checkout from './pages/Checkout'
@@ -7,7 +7,7 @@ import Checkout from './pages/Checkout'
 function App() {
   return (
     <>
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<ItemListContainer greeting="¡Bienvenido a la tienda de ropa!" />} />
         <Route path="/detalle/:id" element={<ItemDetailContainer />} />
