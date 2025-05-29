@@ -1,24 +1,15 @@
-import "./Header.module.css";
-import { Link } from "react-router-dom";
-import { CartWidget } from "./CartWidget";
+import { Link } from 'react-router-dom'
+import CartWidget from './CartWidget'
 
-export const Header = () => {
+const Header = () => {
   return (
-    <header className="header">
-      <div className="header__logo">
-        <Link to="/">
-          <h1>Tienda Ropa</h1>
-        </Link>
-      </div>
-
-      <nav className="header__nav">
-        <Link to="/">Inicio</Link>
-        <Link to="/productos">Productos</Link>
-        <Link to="/nosotros">Nosotros</Link>
-        <Link to="/contacto">Contacto</Link>
-      </nav>
-
+    <header style={{ display: 'flex', justifyContent: 'space-between', padding: '20px', backgroundColor: '#f8f8f8' }}>
+      <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+        <h2>Tienda de Ropa</h2>
+      </Link>
       <CartWidget />
     </header>
-  );
-};
+  )
+}
+
+export default Header
