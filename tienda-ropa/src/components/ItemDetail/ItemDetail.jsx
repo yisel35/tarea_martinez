@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ItemQuantitySelector from './ItemQuantitySelector';
 import Description from './Description';
 import AddItemButton from './AddItemButton';
-import { useCart } from '../../../context/CartContext';
+import { useCart } from '../../context/CartContext';
 import './ItemDetail.css';
 
 const ItemDetail = ({ product }) => {

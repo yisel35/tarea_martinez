@@ -1,47 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import Loader from '../Loader/Loader';
-import './ItemListContainer.css';
+import { getProducts } from '../../mock/products'; 
 
-const ItemListContainer = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { categoryId } = useParams();
+const ItemListContainer = ({ greeting }) => {
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const { categoryId } = useParams();
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        // Simulación de API
-        await new Promise(resolve => setTimeout(resolve, 1500));
+    useEffect(() => {
+        setLoading(true);
         
-        const mockProducts = [
-          { id: 1, name: 'Camisa Hombre', price: 29.99, category: 'hombre', image: '/camisa-hombre.jpg' },
-          { id: 2, name: 'Pantalón Mujer', price: 49.99, category: 'mujer', image: '/pantalon-mujer.jpg' },
-          // ...más productos
-        ];
-        
-        const filteredProducts = categoryId 
-          ? mockProducts.filter(p => p.category === categoryId)
-          : mockProducts;
-          
-        setProducts(filteredProducts);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+        getProducts()
+            .then(response => {
+                if (categoryId) {
+                    const filteredProducts = response.filter(
+                        prod => prod.category === categoryId
+                    );
+                    setProducts(filteredProducts);
+                } else {
+                    setProducts(response);
+                }
+            })
+            .catch(err => console.log(err))
+            .finally(() => setLoading(false));
+    }, [categoryId]);
 
-    fetchProducts();
-  }, [categoryId]);
-
-  return (
-    <div className="item-list-container">
-      <h2>{categoryId ? `Productos de ${categoryId}` : 'Todos los Productos'}</h2>
-      {loading ? <Loader /> : <ItemList products={products} />}
-    </div>
-  );
+    return (
+        <div className="item-list-container">
+            <h2>{greeting || `Productos ${categoryId ? `de ${categoryId}` : ''}`}</h2>
+            {loading ? 
+                <div className="loader">Cargando productos...</div> : 
+                <ItemList products={products} />
+            }
+        </div>
+    );
 };
 
 export default ItemListContainer;

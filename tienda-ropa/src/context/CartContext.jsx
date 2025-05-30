@@ -2,6 +2,8 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const CartContext = createContext();
 
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
@@ -9,7 +11,7 @@ export const CartProvider = ({ children }) => {
     const [totalItems, setTotalItems] = useState(0);
     const [cartTotal, setCartTotal] = useState(0);
 
-    // Actualizar totalItems y cartTotal cuando cambie el carrito
+    // Actualizar totales cuando cambie el carrito
     useEffect(() => {
         const newTotalItems = cart.reduce((total, item) => total + item.quantity, 0);
         const newCartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -23,7 +25,7 @@ export const CartProvider = ({ children }) => {
             const existingItemIndex = prevCart.findIndex(i => i.id === item.id);
             
             if (existingItemIndex !== -1) {
-                
+                // Actualizar cantidad si existe
                 const updatedCart = [...prevCart];
                 updatedCart[existingItemIndex] = {
                     ...updatedCart[existingItemIndex],
@@ -31,7 +33,7 @@ export const CartProvider = ({ children }) => {
                 };
                 return updatedCart;
             } else {
-                
+                // Agregar nuevo item
                 return [...prevCart, { ...item, quantity }];
             }
         });

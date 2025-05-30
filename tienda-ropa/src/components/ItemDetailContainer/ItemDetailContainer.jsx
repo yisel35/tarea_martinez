@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import Loader from '../Loader/Loader';
-import './ItemDetailContainer.css';
+
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
@@ -12,7 +11,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        // Simulación de API
+       
         await new Promise(resolve => setTimeout(resolve, 1000));
         
         const mockProducts = [
@@ -25,7 +24,7 @@ const ItemDetailContainer = () => {
             image: '/camisa-hombre.jpg',
             stock: 10
           },
-          // ...más productos
+      
         ];
         
         const foundProduct = mockProducts.find(p => p.id === parseInt(itemId));

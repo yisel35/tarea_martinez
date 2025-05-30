@@ -3,23 +3,22 @@ import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Cart from './components/Cart/Cart';
-import Home from './components/Home/Home';
+import Cart from './components/Cart'; 
 
 function App() {
   return (
-    <div className="app">
+    <div className="App">
       <NavBar />
-      <main className="main-content">
+      <div className="content-container">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a la Tienda de Ropa" />} />
           <Route path="/category/:categoryId" element={<ItemListContainer />} />
           <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} /> {/* Ruta para el carrito */}
         </Routes>
-      </main>
+      </div>
       <footer className="footer">
-        Tienda de Ropa {new Date().getFullYear()}
+        Tienda de Ropa  {new Date().getFullYear()}
       </footer>
     </div>
   );
