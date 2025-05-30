@@ -1,20 +1,27 @@
-import Header from './components/Header/Header';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
-import NotFound from './components/NotFound/NotFound';
-import './App.css';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
+import Home from './components/Home/Home';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <div className="app">
+      <NavBar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </main>
+      <footer className="footer">
+        Tienda de Ropa {new Date().getFullYear()}
+      </footer>
+    </div>
   );
 }
 
