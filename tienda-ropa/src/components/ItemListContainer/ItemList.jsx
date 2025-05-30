@@ -1,13 +1,14 @@
-import Item from './Item'
+import React from 'react';
+import Item from './Item';
 
-const ItemList = ({ productos }) => {
+const ItemList = ({ items }) => {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
-      {productos.map(prod => (
-        <Item key={prod.id} {...prod} />
+    <div>
+      {items.map((item) => (
+        <Item key={item.id} item={item} />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default ItemList
+export default ItemList;

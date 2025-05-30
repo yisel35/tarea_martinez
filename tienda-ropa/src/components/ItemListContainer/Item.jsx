@@ -1,15 +1,14 @@
-import styles from './Item.module.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Item = ({ id, nombre, precio, imagen }) => {
+const Item = ({ item }) => {
   return (
-    <div className={styles.card}>
-      <img src={imagen} alt={nombre} />
-      <h3>{nombre}</h3>
-      <p>${precio}</p>
-      <Link to={`/detalle/${id}`}>Ver más</Link>
+    <div>
+      <h3>{item.name}</h3>
+      <p>${item.price}</p>
+      <Link to={`/item/${item.id}`}>Ver detalle</Link>
     </div>
-  )
-}
+  );
+};
 
-export default Item
+export default Item;

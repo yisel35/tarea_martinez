@@ -1,21 +1,23 @@
-import { useParams } from 'react-router-dom'
-import ItemDetail from './ItemDetail'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
 
 const productos = [
-  { id: '1', nombre: 'Remera básica', precio: 4500, imagen: 'https://via.placeholder.com/300', descripcion: 'Remera 100% algodón' },
-  { id: '2', nombre: 'Jeans skinny', precio: 8500, imagen: 'https://via.placeholder.com/300', descripcion: 'Jeans elastizados modernos' },
-  { id: '3', nombre: 'Campera de cuero', precio: 12000, imagen: 'https://via.placeholder.com/300', descripcion: 'Campera premium sintética' }
-]
+  { id: 1, name: 'Remera', category: 'hombre', price: 2000, description: 'Remera de algodón' },
+  { id: 2, name: 'Vestido', category: 'mujer', price: 3500, description: 'Vestido elegante' },
+  { id: 3, name: 'Camisa', category: 'hombre', price: 3000, description: 'Camisa de lino' },
+];
 
 const ItemDetailContainer = () => {
-  const { id } = useParams()
-  const producto = productos.find(p => p.id === id)
+  const { itemId } = useParams();
+  const [item, setItem] = useState(null);
 
-  return (
-    <div>
-      {producto ? <ItemDetail producto={producto} /> : <p>Producto no encontrado</p>}
-    </div>
-  )
-}
+  useEffect(() => {
+    const foundItem = productos.find((p) => p.id === parseInt(itemId));
+    setItem(foundItem);
+  }, [itemId]);
 
-export default ItemDetailContainer
+  return item ? <ItemDetail item={item} /> : <p>Cargando...</p>;
+};
+
+export default ItemDetailContainer;

@@ -1,18 +1,15 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
 import CartWidget from './CartWidget';
-import styles from './Header.module.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <Link to="/" className={styles.logo}>Tienda Ropa</Link>
-      <nav className={styles.nav}>
-        <Link to="/category/remeras">Remeras</Link>
-        <Link to="/category/pantalones">Pantalones</Link>
-        <Link to="/category/zapatos">Zapatos</Link>
-        <Link to="/cart">
-          <CartWidget />
-        </Link>
+    <header>
+      <nav>
+        <Link to='/'>Tienda de Ropa</Link>
+        <Link to='/category/hombre'>Hombre</Link>
+        <Link to='/category/mujer'>Mujer</Link>
+        <CartWidget />
       </nav>
     </header>
   );

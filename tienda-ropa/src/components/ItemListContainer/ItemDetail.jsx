@@ -1,15 +1,18 @@
-const ItemDetail = ({ producto }) => {
-  return (
-    <div style={{ padding: '2rem', display: 'flex', gap: '2rem' }}>
-      <img src={producto.imagen} alt={producto.nombre} style={{ width: '300px' }} />
-      <div>
-        <h2>{producto.nombre}</h2>
-        <p><strong>Precio:</strong> ${producto.precio}</p>
-        <p><strong>Descripción:</strong> {producto.descripcion}</p>
-        <button>Agregar al carrito</button>
-      </div>
-    </div>
-  )
-}
+import React from 'react';
+import ItemQuantitySelector from './ItemQuantitySelector';
+import Description from './Description';
+import AddItemButton from './AddItemButton';
 
-export default ItemDetail
+const ItemDetail = ({ item }) => {
+  return (
+    <div>
+      <h2>{item.name}</h2>
+      <p>Precio: ${item.price}</p>
+      <Description text={item.description} />
+      <ItemQuantitySelector />
+      <AddItemButton item={item} />
+    </div>
+  );
+};
+
+export default ItemDetail;
