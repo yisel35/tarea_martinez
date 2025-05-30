@@ -1,11 +1,15 @@
-import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
-  return (
-    <Link to="/checkout" style={{ fontSize: '24px', textDecoration: 'none' }}>
-      🛒
-    </Link>
-  )
-}
+  const { totalQuantity } = useContext(CartContext);
 
-export default CartWidget
+  return (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      🛒
+      <span style={{ marginLeft: '5px' }}>{totalQuantity() || 0}</span>
+    </div>
+  );
+};
+
+export default CartWidget;
