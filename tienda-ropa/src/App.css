@@ -1,58 +1,33 @@
-/* Navbar principal */
-.navbar {
-  border-bottom: 1px solid #e8e8e8;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+/* App.css */
+body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 15px 0;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
-/* Enlaces del menú */
+.navbar {
+  background-color: #fff !important;
+  border-bottom: 1px solid #eaeaea;
+}
+
 .nav-link {
-  color: #222 !important;
-  font-size: 0.8rem;
-  letter-spacing: 1.5px;
-  transition: all 0.3s ease;
-  position: relative;
+  color: #000 !important;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
 }
 
-.nav-link:hover {
-  color: #555 !important;
+.product-card:hover .card-img {
+  transform: scale(1.03);
 }
 
-/* Subrayado al pasar el mouse */
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: #222;
-  transition: width 0.3s ease;
+.product-card:hover .btn {
+  transform: translateY(0);
 }
 
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* Iconos */
-.nav-icon {
-  transition: transform 0.2s ease;
-}
-
-.nav-icon:hover {
-  transform: scale(1.1);
-}
-
-/* Badge del carrito */
-.badge {
-  font-size: 0.6rem;
-  padding: 0.15em 0.4em;
-  font-weight: 400;
-}
-
-/* Toggle en móviles */
-.navbar-toggler {
-  border: none;
-  box-shadow: none !important;
+.btn-dark {
+  background-color: #000 !important;
+  border: none !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
