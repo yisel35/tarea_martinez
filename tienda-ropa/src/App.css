@@ -1,35 +1,51 @@
-body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Añade esto para el navbar fijo */
+
 .fixed-top {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 1000;
+  background-color: white;
+  border-bottom: 1px solid #eaeaea;
+  padding: 15px 0;
 }
 
-.nav-link {
-  color: #000 !important;
+
+body {
+  padding-top: 80px;
+}
+
+
+.product-card {
+  transition: transform 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.btn-dark {
+  background-color: #000 !important;
+  border: none !important;
   letter-spacing: 1px;
-  font-size: 0.85rem;
   text-transform: uppercase;
-  transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #555 !important;
+  padding: 10px 20px;
+  font-size: 0.85rem;
 }
 
 
-.App {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 15px;
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
 }
