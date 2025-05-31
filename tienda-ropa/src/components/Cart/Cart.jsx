@@ -8,7 +8,6 @@ const Cart = () => {
   
   const cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
-  // Estilos en el mismo archivo
   const cartStyles = {
     container: {
       minHeight: '70vh',

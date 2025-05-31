@@ -11,10 +11,10 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        // Simulación de carga
+ 
         await new Promise(resolve => setTimeout(resolve, 1000));
         
-        // Base de datos de productos completa con 9 items
+       
         const mockProducts = [
           { 
             id: 1, 
@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
             price: 49.99, 
             description: 'Conjunto elegante para mujer con tejido transpirable y diseño floral.', 
             category: 'mujer',
-            image: '/mujer1.jpg',
+            image: 'mujer1.jpg',
             stock: 8
           },
           { 

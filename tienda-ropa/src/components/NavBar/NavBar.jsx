@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { Cart } from 'react-bootstrap-icons';
 
-// Estilos en el mismo archivo (CSS-in-JS) como solución temporal
+
 const navbarStyles = {
   navbar: {
     backgroundColor: '#fff',
-    borderBottom: '1px solid #eaeaea',
+    borderBottom: '1px solidrgb(116, 29, 29)',
     padding: '15px 0'
   },
   navLink: {
