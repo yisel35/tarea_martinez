@@ -7,10 +7,10 @@
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
-  background-color: #8f7a7a;
+  background-color: #fffbfb;
   line-height: 1.6;
+  padding-top: 80px; 
 }
-
 
 a {
   text-decoration: none;
