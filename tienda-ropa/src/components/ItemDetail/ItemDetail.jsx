@@ -14,30 +14,73 @@ const ItemDetail = ({ product }) => {
   };
 
   return (
-    <div className="item-detail">
-      <img src={product.image} alt={product.name} />
-      <div className="item-info">
-        <h2>{product.name}</h2>
-        <p className="price">${product.price.toFixed(2)}</p>
-        <Description text={product.description} />
-        
-        <div className="selector-container">
-          <ItemQuantitySelector 
-            quantity={quantity} 
-            setQuantity={setQuantity}
-            maxStock={product.stock}
-          />
-          <AddItemButton 
-            onAdd={handleAddToCart} 
-            disabled={product.stock === 0}
+    <div className="item-detail" style={{
+      display: 'flex',
+      flexDirection: 'column',
+      maxWidth: '1200px',
+      margin: '0 auto',
+      padding: '40px 20px'
+    }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+        <div style={{ width: '100%' }}>
+          <img 
+            src={product.image} 
+            alt={product.name} 
+            style={{ width: '100%', height: '500px', objectFit: 'cover' }}
           />
         </div>
         
-        {product.stock > 0 ? (
-          <p className="stock">Disponibles: {product.stock}</p>
-        ) : (
-          <p className="out-of-stock">AGOTADO</p>
-        )}
+        <div style={{ width: '100%' }}>
+          <h2 style={{ 
+            fontSize: '1.8rem', 
+            fontWeight: '300', 
+            letterSpacing: '1px', 
+            textTransform: 'uppercase',
+            marginBottom: '10px'
+          }}>
+            {product.name}
+          </h2>
+          
+          <p className="price" style={{ 
+            fontSize: '1.5rem', 
+            marginBottom: '20px' 
+          }}>
+            ${product.price.toFixed(2)}
+          </p>
+          
+          <Description text={product.description} />
+          
+          <div className="selector-container" style={{ 
+            display: 'flex', 
+            flexDirection: 'column',
+            gap: '15px',
+            marginBottom: '20px'
+          }}>
+            <ItemQuantitySelector 
+              quantity={quantity} 
+              setQuantity={setQuantity}
+              maxStock={product.stock}
+            />
+            
+            <AddItemButton 
+              onAdd={handleAddToCart} 
+              disabled={product.stock === 0}
+            />
+          </div>
+          
+          {product.stock > 0 ? (
+            <p className="stock" style={{ fontSize: '0.9rem' }}>
+              Disponibles: {product.stock}
+            </p>
+          ) : (
+            <p className="out-of-stock" style={{ 
+              fontSize: '0.9rem', 
+              color: '#e00' 
+            }}>
+              AGOTADO
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
