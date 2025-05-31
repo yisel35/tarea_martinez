@@ -18,7 +18,7 @@ export const getProducts = () => {
             image: "/images/vestido.jpg",
             stock: 8
         },
-        // Agrega más productos según necesites
+        
     ]);
 };
 

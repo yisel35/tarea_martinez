@@ -1,38 +1,21 @@
-import { Link, NavLink } from 'react-router-dom';
-import CartWidget from '../CartWidget/CartWidget';
-import './NavBar.css';
+// components/Navbar.jsx
+import React from 'react';
 
-const NavBar = () => {
-  const categories = [
-    { id: 'hombre', name: 'Ropa Hombre' },
-    { id: 'mujer', name: 'Ropa Mujer' },
-    { id: 'accesorios', name: 'Accesorios' }
-  ];
-
+const Navbar = () => {
   return (
     <nav className="navbar">
-      <Link to="/" className="logo">
-        <img src="/logo.png" alt="Tienda de Ropa" />
-      </Link>
-      
-      <ul className="nav-links">
-        {categories.map(category => (
-          <li key={category.id}>
-            <NavLink 
-              to={`/category/${category.id}`} 
-              className={({ isActive }) => isActive ? 'active' : ''}
-            >
-              {category.name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-      
-      <div className="cart-section">
-        <CartWidget />
+      <div className="logo">MARTÍNEZ KIM</div>
+      <div className="categories">
+        <a href="#mujer">ROPA MUJER</a>
+        <a href="#hombre">ROPA HOMBRE</a>
+        <a href="#zapatos">ZAPATOS</a>
+      </div>
+      <div className="icons">
+        <button className="icon-btn">👤</button>
+        <button className="icon-btn">🛒<span className="cart-count">0</span></button>
       </div>
     </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;
