@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import { getProducts } from '../../mock/products'; 
+import { getProducts } from '../../mock/ProductCard'; 
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);

@@ -1,13 +1,18 @@
-/* App.css */
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
   background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar {
-  background-color: #fff !important;
-  border-bottom: 1px solid #eaeaea;
+/* Añade esto para el navbar fijo */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
 .nav-link {
@@ -15,19 +20,16 @@ body {
   letter-spacing: 1px;
   font-size: 0.85rem;
   text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 
-.product-card:hover .card-img {
-  transform: scale(1.03);
+.nav-link:hover {
+  color: #555 !important;
 }
 
-.product-card:hover .btn {
-  transform: translateY(0);
-}
 
-.btn-dark {
-  background-color: #000 !important;
-  border: none !important;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.App {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
