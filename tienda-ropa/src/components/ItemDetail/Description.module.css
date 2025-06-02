@@ -1,0 +1,23 @@
+.description {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.description h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.description ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.description li {
+  margin-bottom: 8px;
+}

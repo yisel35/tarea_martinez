@@ -1,0 +1,70 @@
+.detailContainer {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.imageSection {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.mainImage {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.infoSection {
+  flex: 1;
+  padding: 40px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 1.8rem;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.stock {
+  color: #27ae60;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.outOfStock {
+  color: #e74c3c;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.actions {
+  margin-top: 30px;
+}
+
+.backButton {
+  display: inline-block;
+  margin-top: 20px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.backButton:hover {
+  text-decoration: underline;
+}

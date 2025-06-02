@@ -1,30 +1,14 @@
-import { FaCartPlus } from 'react-icons/fa';
+import React from 'react';
+import styles from './AddItemButton.module.css';
 
-const AddItemButton = ({ onAdd, disabled }) => {
+const AddItemButton = ({ onClick, disabled }) => {
   return (
     <button 
-      className={`add-to-cart-btn ${disabled ? 'disabled' : ''}`} 
-      onClick={onAdd}
+      className={styles.button} 
+      onClick={onClick}
       disabled={disabled}
-      style={{
-        background: '#000',
-        color: '#fff',
-        border: 'none',
-        padding: '10px 15px',
-        cursor: 'pointer',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '8px',
-        fontSize: '0.85rem',
-        textTransform: 'uppercase',
-        letterSpacing: '1px',
-        opacity: disabled ? 0.5 : 1,
-        pointerEvents: disabled ? 'none' : 'all',
-        width: '100%',
-        justifyContent: 'center'
-      }}
     >
-      <FaCartPlus /> Agregar al carrito
+      Agregar al carrito
     </button>
   );
 };

@@ -1,0 +1,38 @@
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.label {
+  margin-right: 15px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: 36px;
+  height: 36px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity {
+  margin: 0 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  min-width: 30px;
+  text-align: center;
+}

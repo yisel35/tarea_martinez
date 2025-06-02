@@ -1,15 +1,19 @@
 import React from 'react';
+import styles from './Description.module.css';
 
-const Description = ({ text }) => {
+const Description = ({ product }) => {
   return (
-    <p className="description-text" style={{ 
-      fontSize: '0.9rem', 
-      color: '#666', 
-      lineHeight: '1.6',
-      marginBottom: '1rem'
-    }}>
-      {text}
-    </p>
+    <div className={styles.description}>
+      <h3>Descripción</h3>
+      <p>{product.description}</p>
+      
+      <h3>Características</h3>
+      <ul>
+        {product.features.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
