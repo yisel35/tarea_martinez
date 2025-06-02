@@ -1,0 +1,75 @@
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid rgb(116, 29, 29);
+  padding: 15px 0;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.brand:hover {
+  color: #555;
+}
+
+.navLink {
+  color: #000;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding: 0 15px;
+  text-decoration: none;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #555;
+}
+
+.cartLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cartBadge {
+  position: absolute;
+  font-size: 0.6rem;
+  padding: 4px 6px;
+  top: -5px;
+  right: -10px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggleButton:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Estilos responsivos */
+@media (max-width: 991.98px) {
+  .navbarCollapse {
+    padding-top: 15px;
+  }
+
+  .navLink {
+    padding: 10px 15px;
+    display: block;
+  }
+
+  .cartLink {
+    padding: 10px 15px;
+  }
+}

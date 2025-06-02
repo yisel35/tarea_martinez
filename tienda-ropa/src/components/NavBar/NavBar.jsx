@@ -3,68 +3,44 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { Cart } from 'react-bootstrap-icons';
-
-
-const navbarStyles = {
-  navbar: {
-    backgroundColor: '#fff',
-    borderBottom: '1px solidrgb(116, 29, 29)',
-    padding: '15px 0'
-  },
-  navLink: {
-    color: '#000',
-    letterSpacing: '1px',
-    fontSize: '0.85rem',
-    textTransform: 'uppercase',
-    transition: 'all 0.3s ease',
-    padding: '0 15px',
-    textDecoration: 'none'
-  },
-  navLinkHover: {
-    color: '#555'
-  },
-  cartBadge: {
-    fontSize: '0.6rem',
-    padding: '4px 6px',
-    top: '-5px',
-    right: '-10px',
-    backgroundColor: '#dc3545'
-  }
-};
+import styles from './NavBar.module.css';
 
 const AppNavbar = () => {
   const { cart } = useContext(CartContext);
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <Navbar bg="light" expand="lg" style={navbarStyles.navbar} fixed="top">
+    <Navbar bg="light" expand="lg" className={styles.navbar} fixed="top">
       <Container>
-        <Navbar.Brand as={Link} to="/" style={{ fontWeight: 'bold', fontSize: '1.3rem' }}>
+        <Navbar.Brand as={Link} to="/" className={styles.brand}>
           MARTÍNEZ KIM
         </Navbar.Brand>
         
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle 
+          aria-controls="basic-navbar-nav" 
+          className={styles.toggleButton}
+        />
         
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className={styles.navbarCollapse}>
           <Nav className="mx-auto">
             <Nav.Link 
               as={Link} 
               to="/category/mujer" 
-              style={navbarStyles.navLink}
+              className={styles.navLink}
             >
               Ropa Mujer
             </Nav.Link>
             <Nav.Link 
               as={Link} 
               to="/category/hombre" 
-              style={navbarStyles.navLink}
+              className={styles.navLink}
             >
               Ropa Hombre
             </Nav.Link>
             <Nav.Link 
               as={Link} 
               to="/category/zapatos" 
-              style={navbarStyles.navLink}
+              className={styles.navLink}
             >
               Zapatos
             </Nav.Link>
@@ -74,14 +50,11 @@ const AppNavbar = () => {
             <Nav.Link 
               as={Link} 
               to="/cart" 
-              style={{ ...navbarStyles.navLink, position: 'relative' }}
+              className={`${styles.navLink} ${styles.cartLink}`}
             >
               <Cart size={24} />
               {totalItems > 0 && (
-                <span 
-                  className="position-absolute badge rounded-pill"
-                  style={navbarStyles.cartBadge}
-                >
+                <span className={styles.cartBadge}>
                   {totalItems}
                 </span>
               )}

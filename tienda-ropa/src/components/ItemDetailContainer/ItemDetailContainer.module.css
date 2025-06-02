@@ -1,18 +1,29 @@
 .container {
-  padding: 40px 20px;
   min-height: 70vh;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.loading {
+.loadingContainer {
   text-align: center;
-  padding: 60px;
-  font-size: 1.2rem;
-  color: #7f8c8d;
+  padding: 60px 20px;
 }
 
-.error {
+.errorContainer {
   text-align: center;
-  padding: 60px;
-  color: #e74c3c;
-  font-size: 1.2rem;
+  padding: 60px 20px;
+  font-size: 1.1rem;
+}
+
+.backLink {
+  color: #000;
+  text-decoration: underline;
+  margin-top: 20px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.backLink:hover {
+  color: #3498db;
 }

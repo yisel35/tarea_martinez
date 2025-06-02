@@ -1,19 +1,28 @@
-const Loader = () => {
+import React from 'react';
+import styles from './Loader.module.css';
+
+const Loader = ({ size = 'medium', color = 'primary', message }) => {
+  // Determinar clase de tamaño
+  const sizeClass = {
+    small: styles.small,
+    medium: styles.medium,
+    large: styles.large
+  }[size] || styles.medium;
+
+  // Determinar clase de color
+  const colorClass = {
+    primary: styles.spinnerPrimary,
+    secondary: styles.spinnerSecondary,
+    dark: styles.spinnerDark
+  }[color] || styles.spinnerPrimary;
+
   return (
-    <div className="loader" style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '50vh'
-    }}>
-      <div style={{
-        border: '4px solid rgba(0, 0, 0, 0.1)',
-        width: '40px',
-        height: '40px',
-        borderRadius: '50%',
-        borderLeftColor: '#000',
-        animation: 'spin 1s linear infinite'
-      }}></div>
+    <div className={styles.loaderContainer}>
+      <div className={`${styles.spinner} ${sizeClass} ${colorClass}`}></div>
+      
+      {message && (
+        <div className={styles.message}>{message}</div>
+      )}
     </div>
   );
 };
