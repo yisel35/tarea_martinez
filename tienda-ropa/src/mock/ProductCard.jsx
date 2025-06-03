@@ -1,3 +1,4 @@
+import './ProductCard.module.css'
 export const getProducts = () => {
   return Promise.resolve([
     

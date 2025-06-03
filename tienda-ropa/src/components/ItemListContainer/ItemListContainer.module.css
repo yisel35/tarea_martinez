@@ -1,0 +1,19 @@
+.container {
+  padding: 40px 20px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.loadingMessage {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1rem;
+}

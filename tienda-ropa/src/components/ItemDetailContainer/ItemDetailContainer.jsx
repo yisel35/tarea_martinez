@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
-import styles from './ItemDetailContainer.module.css';
+import styles from './ItemDetailContainer.module.css'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
@@ -13,10 +13,10 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        // Simular carga de datos
+   
         await new Promise(resolve => setTimeout(resolve, 1000));
         
-        // Mock de productos
+   
         const mockProducts = [
           { 
             id: 1, 

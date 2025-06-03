@@ -1,9 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ItemDetail.module.css';
 import ItemQuantitySelector from './ItemQuantitySelector';
 import AddItemButton from './AddItemButton';
 import Description from './Description';
+
+
 
 const ItemDetail = ({ product }) => {
   return (

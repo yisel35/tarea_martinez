@@ -1,6 +1,5 @@
-import React from 'react';
-import { useCart } from '../../../context/CartContext';
-import './Brief.css';
+import { useCart } from '../../context/CartContext'; 
+import './Brief.module.css';
 
 const Brief = () => {
   const { cart, cartTotal, clearCart } = useCart();

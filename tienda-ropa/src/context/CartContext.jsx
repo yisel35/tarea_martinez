@@ -2,22 +2,29 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const CartContext = createContext();
 
-
 // eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem('cart');
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
+    
     const [totalItems, setTotalItems] = useState(0);
     const [cartTotal, setCartTotal] = useState(0);
+    const [isCartOpen, setIsCartOpen] = useState(false);
 
-    // Actualizar totales cuando cambie el carrito
+   
     useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
         const newTotalItems = cart.reduce((total, item) => total + item.quantity, 0);
         const newCartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
         
         setTotalItems(newTotalItems);
-        setCartTotal(newCartTotal);
+        setCartTotal(parseFloat(newCartTotal.toFixed(2)));
     }, [cart]);
 
     const addToCart = (item, quantity) => {
@@ -25,7 +32,7 @@ export const CartProvider = ({ children }) => {
             const existingItemIndex = prevCart.findIndex(i => i.id === item.id);
             
             if (existingItemIndex !== -1) {
-                // Actualizar cantidad si existe
+               
                 const updatedCart = [...prevCart];
                 updatedCart[existingItemIndex] = {
                     ...updatedCart[existingItemIndex],
@@ -33,8 +40,12 @@ export const CartProvider = ({ children }) => {
                 };
                 return updatedCart;
             } else {
-                // Agregar nuevo item
-                return [...prevCart, { ...item, quantity }];
+             
+                return [...prevCart, { 
+                    ...item, 
+                    quantity,
+                    addedAt: new Date().toISOString() 
+                }];
             }
         });
     };
@@ -45,6 +56,26 @@ export const CartProvider = ({ children }) => {
 
     const clearCart = () => {
         setCart([]);
+        localStorage.removeItem('cart');
+    };
+
+    const updateQuantity = (id, newQuantity) => {
+        if (newQuantity < 1) return;
+        
+        setCart(prevCart => 
+            prevCart.map(item => 
+                item.id === id ? {...item, quantity: newQuantity} : item
+            )
+        );
+    };
+
+    const toggleCart = () => {
+        setIsCartOpen(!isCartOpen);
+    };
+
+    const getItemCount = (id) => {
+        const item = cart.find(item => item.id === id);
+        return item ? item.quantity : 0;
     };
 
     return (
@@ -52,9 +83,13 @@ export const CartProvider = ({ children }) => {
             cart, 
             totalItems, 
             cartTotal,
+            isCartOpen,
             addToCart, 
             removeFromCart, 
-            clearCart 
+            clearCart,
+            updateQuantity,
+            toggleCart,
+            getItemCount
         }}>
             {children}
         </CartContext.Provider>

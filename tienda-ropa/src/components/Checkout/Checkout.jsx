@@ -1,7 +1,5 @@
-import React from 'react';
 import Brief from './Brief';
-import CheckoutForm from './CheckoutForm';
-import './Checkout.css';
+import './Checkout.module.css';
 
 const Checkout = () => {
   return (

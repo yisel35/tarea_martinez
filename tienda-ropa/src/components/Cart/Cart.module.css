@@ -1,0 +1,29 @@
+.container {
+  min-height: 70vh;
+  padding: 40px 0;
+}
+
+.table {
+  margin-bottom: 30px;
+}
+
+.productImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .totalContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

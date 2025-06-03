@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import { FaShoppingCart } from 'react-icons/fa';
-import './CartWidget.css';
+import './CartWidget.module.css';
 
 const CartWidget = () => {
   const { totalItems } = useCart();

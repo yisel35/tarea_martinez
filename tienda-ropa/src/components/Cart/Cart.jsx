@@ -1,7 +1,7 @@
-import React from 'react';
 import { Table, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
+
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart } = useCart();
