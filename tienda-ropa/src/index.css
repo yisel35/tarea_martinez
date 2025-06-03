@@ -1,0 +1,23 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  text-align: center;
+}
+
+.text-large {
+  font-size: 25px;
+}
+.color-red {
+  color: red;
+}
+.color-blue {
+  color: rgb(79, 79, 129);
+}

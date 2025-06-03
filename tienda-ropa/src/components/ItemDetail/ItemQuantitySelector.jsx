@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styles from './ItemQuantitySelector.module.css';
 
 const ItemQuantitySelector = ({ quantity = 1, onIncrement, onDecrement }) => {

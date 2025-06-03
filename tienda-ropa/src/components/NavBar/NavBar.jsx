@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../context/CartContext';
+import { useCart } from '../../context/CartContext';
 import { Cart } from 'react-bootstrap-icons';
 import styles from './NavBar.module.css';
 
 const AppNavbar = () => {
-  const { cart } = useContext(CartContext);
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+ const { cart } = useCart();
+ const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <Navbar bg="light" expand="lg" className={styles.navbar} fixed="top">

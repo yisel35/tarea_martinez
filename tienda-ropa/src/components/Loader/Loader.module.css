@@ -23,7 +23,7 @@
   }
 }
 
-/* Variantes de color */
+
 .spinnerPrimary {
   border-left-color: #3498db;
 }
@@ -36,7 +36,7 @@
   border-left-color: #2c3e50;
 }
 
-/* Tamaños */
+
 .small {
   width: 20px;
   height: 20px;
@@ -55,7 +55,7 @@
   border-width: 5px;
 }
 
-/* Mensaje de carga */
+
 .message {
   margin-top: 20px;
   text-align: center;
