@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
-import styles from './ItemDetailContainer.module.css'
+import styles from './ItemDetail.module.css'
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);

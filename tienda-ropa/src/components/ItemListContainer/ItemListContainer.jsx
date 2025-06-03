@@ -28,7 +28,7 @@ const ItemListContainer = ({ greeting }) => {
   }, [categoryId]);
 
   return (
-    <div className="item-list-container" style={{ padding: '40px 20px' }}>
+    <div className="item-list-container" style={{ padding: '80px 20px' }}>
       <h2 style={{ 
         textAlign: 'center', 
         fontWeight: '300', 
