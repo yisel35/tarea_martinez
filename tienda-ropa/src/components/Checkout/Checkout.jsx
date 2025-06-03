@@ -9,7 +9,6 @@ const Checkout = () => {
     setOrderCompleted(true);
   };
 
-  // Estilos inline
   const wrapperStyle = {
     minHeight: '100vh',
     display: 'flex',
