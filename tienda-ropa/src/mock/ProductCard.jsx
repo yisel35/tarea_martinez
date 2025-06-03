@@ -12,7 +12,7 @@ export const getProducts = () => {
     { id: 6, name: 'Conjunto Hombre 3', price: 74.99, category: 'hombre', image: '/hombre3.jpg', stock: 3 },
     
     
-    { id: 7, name: 'Zapatos Elegantes', price: 89.99, category: 'zapatos', image: '/zapatos.jpg', stock: 6 },
+    { id: 7, name: 'Zapatos Elegantes', price: 89.99, category: 'zapatos', image: '/zapatos1.jpg', stock: 6 },
     { id: 8, name: 'Zapatos Casuales', price: 65.99, category: 'zapatos', image: '/zapatos2.jpg', stock: 9 },
     { id: 9, name: 'Zapatos Deportivos', price: 75.99, category: 'zapatos', image: '/zapatos3.jpg', stock: 4 }
   ]);

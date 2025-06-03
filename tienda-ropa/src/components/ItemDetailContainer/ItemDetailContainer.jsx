@@ -71,7 +71,7 @@ const ItemDetailContainer = () => {
               'Tallas disponibles: M, L, XL, XXL'
             ],
             category: 'hombre',
-            image: '/hombre1.jpg',
+            image: '/hombre.jpg',
             stock: 12
           },
           { 

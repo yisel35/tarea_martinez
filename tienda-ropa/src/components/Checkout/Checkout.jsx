@@ -1,5 +1,7 @@
 import Brief from './Brief';
 import './Checkout.module.css';
+import CheckoutForm from './CheckoutForm'; // asegurate que la ruta sea correcta
+
 
 const Checkout = () => {
   return (
